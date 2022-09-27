@@ -1,0 +1,102 @@
+{
+    "id": "approvalform",
+    "schemaVersion": "1.1.0",
+    "name": "ApprovalForm",
+    "revision": "1.0",
+    "type": "task",
+    "readOnly": false,
+    "content": [
+        {
+            "id": "so_items",
+            "type": "section",
+            "title": "SO Items",
+            "content": [
+                {
+                    "id": "items",
+                    "type": "integer",
+                    "label": "Item ",
+                    "readOnly": true,
+                    "value": "${context.item.posnr}",
+                    "constraints": {
+                        "required": false
+                    }
+                },
+                {
+                    "id": "mat",
+                    "type": "string",
+                    "label": "Material",
+                    "readOnly": true,
+                    "value": "${context.item.matnr}",
+                    "constraints": {
+                        "required": false
+                    }
+                },
+                {
+                    "id": "descriptoin",
+                    "type": "string",
+                    "label": "Description",
+                    "readOnly": true,
+                    "value": "${context.item.arktx}",
+                    "constraints": {
+                        "required": false
+                    }
+                },
+                {
+                    "id": "quantity",
+                    "type": "integer",
+                    "label": "Old Quantity",
+                    "readOnly": true,
+                    "value": "${context.item.kwmenge1}",
+                    "constraints": {
+                        "required": false
+                    }
+                },
+                {
+                    "id": "new_quantity",
+                    "type": "string",
+                    "label": "New Quantity",
+                    "readOnly": true,
+                    "value": "${context.item.kwmenge2}",
+                    "constraints": {
+                        "required": false
+                    }
+                }
+            ]
+        },
+        {
+            "id": "approver_comments",
+            "type": "section",
+            "title": "Approver Comments",
+            "content": [
+                {
+                    "id": "comment",
+                    "type": "string",
+                    "label": "Comment",
+                    "readOnly": false,
+                    "value": "${context.so.comment}",
+                    "control": {
+                        "type": "TextArea",
+                        "properties": {
+                            "height": "small"
+                        }
+                    },
+                    "constraints": {
+                        "required": false
+                    }
+                }
+            ]
+        }
+    ],
+    "decisions": [
+        {
+            "id": "approved",
+            "text": "Approved",
+            "decisionType": "positive"
+        },
+        {
+            "id": "rejected",
+            "text": "Rejected",
+            "decisionType": ""
+        }
+    ]
+}

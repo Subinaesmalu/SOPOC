@@ -1,0 +1,95 @@
+_schema-version: "3.2"
+ID: SOPOC
+version: 0.0.1
+modules:
+- name: workflow-module
+  type: com.sap.application.content
+  path: workflow-module
+  requires:
+  - name: workflow
+    parameters:
+      content-target: true
+- name: sopocappnssopocui5module
+  type: html5
+  path: so_poc_ui5_module
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: sopoc-approuter
+  type: approuter.nodejs
+  path: sopoc-approuter
+  requires:
+  - name: SOPOC_html_repo_runtime
+  - name: uaa_SOPOC
+  - name: workflow
+  - name: SOPOC-destination-service
+    group: destinations
+    properties:
+      forwardAuthToken: false
+      name: ui5
+      url: https://ui5.sap.com
+  parameters:
+    disk-quota: 256M
+    memory: 256M
+- name: SOPOC_ui_deployer
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: SOPOC-repo-host
+    parameters:
+      content-target: true
+      build-parameters:
+      build-result: resources
+      requires:
+      - artifacts:
+      - sopocappns.sopocui5module.zip
+      name: sopocappns.sopocui5module
+      target-path: resources/      
+resources:
+- name: workflow
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: workflow
+    service-plan: standard
+- name: SOPOC-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-host
+- name: SOPOC-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:    
+      HTML5Runtime_enabled: false
+      sizeLimit: 200
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0       
+    service: destination
+    service-name: SOPOC-destination-service
+    service-plan: lite
+- name: SOPOC_html_repo_runtime
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-runtime
+- name: uaa_SOPOC
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: SOPOC-xsuaa-service
+    service-plan: application
+parameters:
+  deploy_mode: html5-repo

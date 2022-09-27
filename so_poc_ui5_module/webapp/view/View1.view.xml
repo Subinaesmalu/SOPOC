@@ -1,0 +1,38 @@
+<mvc:View controllerName="sopocappns.sopocui5module.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+        <Text xmlns="sap.m" text="Sales Order" id="text3"/>
+            <Input xmlns="sap.m" value="{Vbeln}" id="VBELN"/>
+            <Button xmlns="sap.m" text="Get SO Data" id="Get_SO_Data" press="onGet"/>
+            <Table id="SOItems" items="{SOItems>/}" growing="true">
+                <columns>
+                    <Column id="_IDGenColumn1">
+                        <Text id="_IDGenText1" text="Item"/>
+                    </Column>
+                    <Column id="_IDGenColumn2">
+                        <Text id="_IDGenText2" text="Material"/>
+                    </Column>
+                    <Column id="_IDGenColumn3">
+                        <Text id="_IDGenText3" text="Description"/>
+                    </Column>
+                    <Column id="_IDGenColumn4">
+                        <Text id="_IDGenText4" text="Qty"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="_IDGenColumnListItem1">
+                        <cells>                           
+                            <Text id="_IDGenText5" text="{SOItems>Posnr}"/>
+                            <Text id="_IDGenText6" text="{SOItems>Matnr}"/>
+                            <Text id="_IDGenText7" text="{SOItems>Arktx}"/>
+                            <Input id="_IDGenText8" value="{SOItems>Kwmeng}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            <Button xmlns="sap.m" text="Send for Approval" id="button0" press="onReq"/>
+        </content>
+    </Page>
+</mvc:View>

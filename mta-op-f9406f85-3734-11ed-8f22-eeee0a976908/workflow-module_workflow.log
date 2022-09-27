@@ -1,0 +1,24 @@
+#2.0#2022 09 18 09:35:07.727#Z#DEBUG#com.sap.cloud.lm.sl.xs2.f9406f85-3734-11ed-8f22-eeee0a976908.workflow-module_workflow.startContentDeployTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-23147###
+[PollDeployContentStatusExecution] [workflow-module] [INFO] Deployment of file Id 2997508c-3735-11ed-b296-03e36586ad88 started#
+
+#2.0#2022 09 18 09:35:07.727#Z#DEBUG#com.sap.cloud.lm.sl.xs2.f9406f85-3734-11ed-8f22-eeee0a976908.workflow-module_workflow.startContentDeployTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-23147###
+[PollDeployContentStatusExecution] [workflow-module] [INFO] Deployment of ApprovalForm.form started#
+
+#2.0#2022 09 18 09:35:07.727#Z#DEBUG#com.sap.cloud.lm.sl.xs2.f9406f85-3734-11ed-8f22-eeee0a976908.workflow-module_workflow.startContentDeployTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-23147###
+[PollDeployContentStatusExecution] [workflow-module] [INFO] Deployment of ApprovalForm.form was completed successfully, Deployment details : {"deployResourceId":"2a1ecf72-3735-11ed-94fc-1b9894acb7a5","contentId":"2a1ecf71-3735-11ed-94fc-af9c898502ee","deployedArtifactId":"approvalform","deployedArtifactName":"ApprovalForm","deployedArtifactVersion":"29"}#
+
+#2.0#2022 09 18 09:35:07.727#Z#DEBUG#com.sap.cloud.lm.sl.xs2.f9406f85-3734-11ed-8f22-eeee0a976908.workflow-module_workflow.startContentDeployTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-23147###
+[PollDeployContentStatusExecution] [workflow-module] [INFO] Deployment of MyWorkflow.workflow started#
+
+#2.0#2022 09 18 09:35:07.727#Z#DEBUG#com.sap.cloud.lm.sl.xs2.f9406f85-3734-11ed-8f22-eeee0a976908.workflow-module_workflow.startContentDeployTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-23147###
+[PollDeployContentStatusExecution] [workflow-module] [INFO] Deployment of MyWorkflow.workflow was completed successfully, Deployment details : {"deployResourceId":"2a1ecf72-3735-11ed-94fc-1b9894acb7a5","contentId":"2a1ecf71-3735-11ed-94fc-af9c898502ee","deployedArtifactId":"sopocworkflow.ns.myworkflow","deployedArtifactName":"MyWorkflow","deployedArtifactVersion":"21"}#
+
+#2.0#2022 09 18 09:35:07.727#Z#DEBUG#com.sap.cloud.lm.sl.xs2.f9406f85-3734-11ed-8f22-eeee0a976908.workflow-module_workflow.startContentDeployTask#
+######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########flowable-async-job-executor-thread-23147###
+[PollDeployContentStatusExecution] [workflow-module] [INFO] Deployment of file Id 2997508c-3735-11ed-b296-03e36586ad88  completed successfuly#
+
